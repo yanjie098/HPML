@@ -1,5 +1,47 @@
 # HPML
 
+https://api.wandb.ai/links/qt2118-new-york-university/1hjbbqx4
+https://api.wandb.ai/links/yanjie98-new-york-university/0rxxoc9i
+
+Framework
+•	Deep Learning Framework: PyTorch
+•	Model and Tokenization: Hugging Face transformers
+•	Distributed Training: PyTorch DistributedDataParallel (DDP)
+•	Logging and Experiment Tracking: Weights and Biases (wandb)
+•	Dataset Handling: Hugging Face datasets
+•	Progress Bar: tqdm
+Dataset
+•	The code uses the AG News dataset, which is a collection of news articles categorized into four classes.
+•	The dataset is loaded using the Hugging Face datasets library and tokenized using the GPT-2 tokenizer.
+Functionalities
+1.	Initialization:
+o	Sets up the environment for distributed training.
+o	Initializes the model, tokenizer, and dataset.
+o	Configures logging.
+2.	Environment Setup:
+o	Ensures the distributed environment variables are set.
+3.	Dataset Preparation:
+o	Loads and tokenizes the AG News dataset.
+o	Converts the dataset into a format suitable for PyTorch.
+4.	DataLoader Creation:
+o	Creates DataLoaders with distributed sampling for training and testing.
+5.	Training:
+o	Handles the training loop, including forward and backward passes, loss calculation, and optimization.
+o	Logs training progress and metrics to wandb.
+o	Supports single-device and multi-device training.
+6.	Evaluation:
+o	Evaluates the trained model on the test dataset.
+o	Calculates accuracy and inference time.
+o	Logs evaluation metrics to wandb.
+7.	Main Function:
+o	Determines the available devices and initiates the training process accordingly.
+Limitations
+•	Hardware Dependency: Performance is highly dependent on the availability of GPUs. Training on CPU will be significantly slower.
+•	Scalability: While the code supports multi-GPU training, it may require further optimization for large-scale distributed training across multiple nodes.
+•	Dataset Specificity: The code is tailored for the AG News dataset. Adapting it to other datasets may require modifications in the dataset preparation and tokenization steps.
+•	Hyperparameter Tuning: The code uses fixed hyperparameters. Optimal performance may require tuning these parameters based on the specific use case and dataset.
+
+
 The following summarizes the comparative analysis of the fine-tuning optimization techniques:
 
 **Accuracy**  
