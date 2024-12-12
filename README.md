@@ -21,7 +21,6 @@ Dataset
 Functionalities
 
 1.	Initialization:
-
 o	Sets up the environment for distributed training.
 o	Initializes the model, tokenizer, and dataset.
 o	Configures logging.
